@@ -67,7 +67,7 @@ export function CustomSearchBox(props: UseSearchBoxProps | any) {
                         }}
                     />
                     <MdClose
-                        className='absolute right-2 top-2.5 reset-icon focus:outline-none'
+                        className='absolute right-2 top-2.5 reset-icon focus:outline-none cursor-pointer'
                         size={20}
                         tabIndex={0}
                         onClick={() => {
