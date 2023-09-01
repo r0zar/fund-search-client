@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--accent);
+  }
+  
+  body {
+    padding: 0.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  b.ais-Highlight-highlighted {
+    background-color: unset;
+    color: black;
+  }
+
+  .ais-InfiniteHits-item:hover {
+    background-color: var(--accent)
+  }
+
+  li.ais-Hits-item, li.ais-InfiniteHits-item{
+    box-shadow: unset;
+    padding: unset;
+  }
+
+  .table-header {
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+
+  svg.submit-icon, svg.reset-icon {
+    color: var(--icon);
+    border-radius: 999px;
+  }
+
+  svg.reset-icon:focus {
+    background: var(--accent);
+  }
+
+  svg.reset-icon:hover  {
+    background: var(--accent);
+  }
+
+  article:focus {
+    outline: 1px solid var(--accent);
+    background-color: var(--accent);
+  }
+
+  button.ais-InfiniteHits-loadMore {
+    border-radius: var(--radius);
+  } 
+  button.ais-InfiniteHits-loadMore:focus {
+    outline: 1px solid var(--accent);
+  }
