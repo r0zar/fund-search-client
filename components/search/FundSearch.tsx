@@ -37,7 +37,7 @@ export default function FundSearch() {
                         <div>Ticker</div>
                         <div>Exchange</div>
                     </thead>
-                    <InfiniteHits showPrevious={false} hitComponent={Hit} className="w-full border-0" />
+                    <InfiniteHits showPrevious={false} hitComponent={Hit} className="w-full border-0 flex flex-col" />
                 </div>
             )}
             <div className="fixed inset-0 -z-10" onClick={() => setModalOpen(false)}></div>
