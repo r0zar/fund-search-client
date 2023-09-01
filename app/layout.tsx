@@ -1,4 +1,4 @@
-import { cx } from '@/components/cx'
+import { cn } from '@/lib/utils'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
@@ -23,7 +23,7 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/instantsearch.css@8.0.0/themes/satellite-min.css"
         />
       </head>
-      <body className={cx(roboto.className, 'container', 'my-8')}>{children}</body>
+      <body className={cn(roboto.className, 'container', 'my-8')}>{children}</body>
     </html>
   )
 }
