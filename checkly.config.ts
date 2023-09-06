@@ -11,7 +11,7 @@ const config = defineConfig({
   */
   logicalId: 'fund-search-client',
   /* An optional URL to your Git repo */
-  repoUrl: 'https://github.com/checkly/checkly-cli',
+  repoUrl: 'https://github.com/r0zar/fund-search-client',
   /* Sets default values for Checks */
   checks: {
     /* A default for how often your Check should run in minutes */
