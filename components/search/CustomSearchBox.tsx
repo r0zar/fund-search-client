@@ -47,6 +47,7 @@ export function CustomSearchBox(props: UseSearchBoxProps | any) {
 
                     <MdSearch size={20} className="absolute left-2 top-2.5 submit-icon" />
                     <input
+                        id='search-input'
                         className="px-8 py-2 w-80 rounded-lg focus:outline-none bg-white"
                         ref={inputRef}
                         autoComplete="off"
@@ -67,6 +68,7 @@ export function CustomSearchBox(props: UseSearchBoxProps | any) {
                         }}
                     />
                     {inputValue && <MdClose
+                        id='search-reset'
                         className='absolute right-2 top-2.5 reset-icon focus:outline-none cursor-pointer'
                         size={20}
                         tabIndex={0}
