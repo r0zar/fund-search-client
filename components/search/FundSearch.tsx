@@ -31,7 +31,7 @@ export default function FundSearch() {
 
             <CustomSearchBox queryHook={queryHook} setModalOpen={setModalOpen} />
             {modalOpen && (
-                <div className="rounded-lg shadow-modal mt-4 p-4 border bg-white  max-h-[80vh] overflow-y-scroll">
+                <div id='search-results' className="rounded-lg shadow-modal mt-4 p-4 border bg-white  max-h-[80vh] overflow-y-scroll">
                     <thead className="grid grid-cols-3 table-header p-2 text-secondary">
                         <div>Name</div>
                         <div>Ticker</div>
