@@ -1,20 +1,35 @@
 'use client';
 
-import React from "react";
+import React, { useState, useRef } from "react";
 import { UseSearchBoxProps } from "react-instantsearch";
 import { MdSearch, MdClose } from "react-icons/md";
 import { useSearchBox } from 'react-instantsearch';
 import "./search-box.css";
 
+
+
+
 export function CustomSearchBox(props: UseSearchBoxProps | any) {
     const { query, refine } = useSearchBox(props);
-    const [inputValue, setInputValue] = React.useState(query);
-    const inputRef = React.useRef<HTMLInputElement>(null);
+    const [inputValue, setInputValue] = useState(query);
+    const inputRef = useRef<HTMLInputElement>(null);
 
-    function setQuery(newQuery: string) {
+    const setQuery = (newQuery: string) => {
         setInputValue(newQuery);
-
         refine(newQuery);
+    }
+
+    const handleReset = (event: React.SyntheticEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setQuery('');
+        inputRef.current?.focus();
+    }
+
+    const handleSubmit = (event: React.SyntheticEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+        inputRef.current?.blur();
     }
 
     return (
@@ -23,28 +38,11 @@ export function CustomSearchBox(props: UseSearchBoxProps | any) {
                 action=""
                 role="search"
                 noValidate
-                onSubmit={(event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    if (inputRef.current) {
-                        inputRef.current.blur();
-                    }
-                }}
-                onReset={(event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    setQuery('');
-
-                    if (inputRef.current) {
-                        inputRef.current.focus();
-                    }
-                }}
+                onSubmit={handleSubmit}
+                onReset={handleReset}
                 className="flex justify-center"
             >
                 <div className="flex bg-white w-min relative rounded-lg">
-
                     <MdSearch size={20} className="absolute left-2 top-2.5 submit-icon" />
                     <input
                         id='search-input'
@@ -57,11 +55,9 @@ export function CustomSearchBox(props: UseSearchBoxProps | any) {
                         spellCheck={false}
                         maxLength={512}
                         value={inputValue}
-                        onChange={(event) => {
-                            setQuery(event.currentTarget.value);
-                        }}
+                        onChange={(event) => setQuery(event.currentTarget.value)}
                         autoFocus
-                        onKeyDown={(e: any) => {  // This allows it to be "clickable" using Enter or Space
+                        onKeyDown={(e: any) => {
                             if (e.key === 'Escape') {
                                 props.setModalOpen(false);
                             }
@@ -76,7 +72,7 @@ export function CustomSearchBox(props: UseSearchBoxProps | any) {
                             props.setModalOpen(false)
                             setQuery('')
                         }}
-                        onKeyDown={(e: any) => {  // This allows it to be "clickable" using Enter or Space
+                        onKeyDown={(e: any) => {
                             if (e.key === 'Enter' || e.key === ' ') {
                                 props.setModalOpen(false);
                                 setQuery('');
