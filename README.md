@@ -1,6 +1,17 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Configuration
+
+You can use `vercel env pull` or set them manually.
+
+The env vars required for this project are:
+
+```
+NEXT_PUBLIC_ALGOLIA_APP_ID="XXXXXXXXXX"
+NEXT_PUBLIC_ALGOLIA_READ_KEY="00000000000000000000000000000000"
+```
+
+## Running Locally
 
 First, run the development server:
 
@@ -32,3 +43,12 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Next Steps
+
+- add error UI state if env vars are not provided
+- add more e2e test cases for business logic
+- add some unit test cases for functionality
+- refactor and organize code to support future updates
+- update favicon and SEO metadata
+- add open graph previews
